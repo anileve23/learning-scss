@@ -1,0 +1,34 @@
+@use '../styles/abstracts/colors' as *;
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    h1 {
+        color: $white;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        list-style-type: none;
+        font-weight: bold;
+        cursor: pointer;
+        color: $white;
+
+        li {
+            margin: 1em;
+        }
+    }
+}
+
+.light {
+    background-color: $primary;
+}
+
+.dark {
+    background-color: $secondary;
+}

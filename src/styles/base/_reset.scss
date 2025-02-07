@@ -1,0 +1,82 @@
+@use '../abstracts/colors' as *;
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.light {
+    .text {
+        color: $dark-900;
+    }
+
+    .background {
+        background-color: $dark-000;
+    }
+}
+
+.dark {
+    .text {
+        color: $white;
+    }
+
+    .background {
+        background-color: $dark-700;
+    }
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.switch-button {
+    margin-top: 10px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: $white;
+    background-color: $dark-700;
+    border: none;
+    border-radius: 25px; /* Rounded edges */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  
+    &:hover {
+      background-color: $dark-900;
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+      transform: translateY(-2px);
+    }
+  
+    &:active {
+      background-color: $dark-800;
+      transform: translateY(0);
+    }
+  
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0, 128, 255, 0.5);
+    }
+  }
+  
+  .dark-theme-button {
+    color: $dark-900;
+    background-color: $white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  
+    &:hover {
+        background-color: $white;
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        background-color: $white;
+        transform: translateY(0);
+    }
+}
