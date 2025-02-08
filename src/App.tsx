@@ -2,6 +2,9 @@ import { ThemeContext } from './context/ThemeContex';
 import { useContext } from 'react';
 import './styles/_main.scss';
 import Navbar from './components';
+import RecipeOfTheDay from './components/RecipeOfTheDay';
+import Recipies from './components/Recipies';
+import AboutUs from './components/AboutUs';
 
 function App() {
   const themeContext = useContext(ThemeContext);
@@ -10,15 +13,9 @@ function App() {
   return (
     <div className={currentTheme}>
       <Navbar />
-      <div className="background flex">
-        <h1 className="text">Hello world!</h1>
-        <button
-          className={`switch-button ${currentTheme === 'dark' ? 'dark-theme-button' : ''}`}
-          onClick={() => themeContext?.setTheme?.(currentTheme === 'light' ? 'dark' : 'light')}
-        >
-          Switch Theme
-        </button>
-      </div>
+      <RecipeOfTheDay/>
+      <Recipies/>
+      <AboutUs/>
     </div>
   );
 }

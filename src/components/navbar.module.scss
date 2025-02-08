@@ -5,10 +5,8 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-
-    h1 {
-        color: $white;
-    }
+    height: 100px;
+    padding: 0 20px;
 
     ul {
         display: flex;
@@ -17,11 +15,37 @@
         list-style-type: none;
         font-weight: bold;
         cursor: pointer;
-        color: $white;
+        color: #613033;
 
         li {
             margin: 1em;
+            font-size: 18px;
+            font-family: 'Montserrat Alternates', sans-serif;
+            font-weight: semi-bold;
+            text-transform: none;
+            line-height: 1.8;
+            letter-spacing: 1px;
         }
+    }
+
+    .logoContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto; 
+    }
+
+    .logo {
+        height: 100px; 
+        width: auto;
+        object-fit: contain;
+    }
+
+    .largeLogo {
+        width: 380px; 
+        max-width: 100%;
+        height: auto;
+        margin-top: -100px;
     }
 }
 

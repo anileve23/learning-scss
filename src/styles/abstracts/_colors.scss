@@ -24,7 +24,7 @@ $orange-600: #fd7e14;
 $orange-700: #f76707;
 $orange-800: #e8590c;
 
-$dark-000: #c1c2c5;
+$dark-000: #ffffff;
 $dark-100: #a6a7ab;
 $dark-200: #909296;
 $dark-300: #5c5f66;
@@ -35,8 +35,12 @@ $dark-700: #1a1b1e;
 $dark-800: #141517;
 $dark-900: #101113;
 
-$primary: $blue-500;
-$secondary: $orange-500;
+$white-100: #bb86fc;
+$purpule-100: #d0bcff;
+
+
+$primary: $white-100;
+$secondary: $purpule-100;
 $success-background: $green-400;
 $success-primary: $green-700;
 $danger-background: $red-400;
