@@ -1,11 +1,7 @@
-import { useContext } from 'react';
-import { ThemeContext } from "../context/ThemeContex";
 import Spaghetti from '../assets/Spaghetti Carbonara.jpg';
 import styles from '../components/RecipeOfTheDay.module.scss'
 
 const RecipeOfTheDay = () => {
-  const themeContext = useContext(ThemeContext);
-  const theme = themeContext?.theme || 'light';
 
   const recipe = {
     title: 'Spaghetti Carbonara',

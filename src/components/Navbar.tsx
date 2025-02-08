@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContex";
 import styles from './navbar.module.scss';
 import logo from '../assets/logo.png';
-import RecipeOfTheDay from "./RecipeOfTheDay";
 
 const Navbar = () => {
     const themeContext = useContext(ThemeContext);
