@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from '../components/Recipies.module.scss';
 
-const recipes = [
+export const recipes = [
     {
       name: "Spaghetti Bolognese",
       image: "Spaghetti-Bolognese",
@@ -317,8 +317,8 @@ const Recipies = () => {
   }, []);
 
   return (
-    <div className="background">
-      <h1 className={`text ${styles.title}`}>100 Recipes</h1>
+    <div className={`${styles.contentWrapper} background`}>
+        <h1 className={`text ${styles.title}`}>🍴 100 Recipies 🍴</h1>
       <div className={styles.recipeList}>
         {recipes.map((recipe, index) => (
           <div key={index} className={`background ${styles.recipeCard}`}>

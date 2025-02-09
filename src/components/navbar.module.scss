@@ -3,7 +3,7 @@
 .nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
     height: 100px;
     padding: 0 20px;
@@ -31,7 +31,7 @@
     .logoContainer {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         width: auto; 
     }
 
@@ -39,6 +39,7 @@
         height: 100px; 
         width: auto;
         object-fit: contain;
+        justify-content: flex-start;
     }
 
     .largeLogo {
@@ -46,6 +47,7 @@
         max-width: 100%;
         height: auto;
         margin-top: -100px;
+        margin-right: 240px;
     }
 }
 
@@ -55,4 +57,21 @@
 
 .dark {
     background-color: $secondary;
+}
+
+.nav .link {
+    color: #613033;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav .link:hover {
+    color: black;
+    transform: translateY(-3px);
+}
+
+.nav .link:focus,
+.nav .link:active {
+    color: black;
+    transform: translateY(-3px);
 }

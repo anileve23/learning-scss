@@ -3,7 +3,7 @@ import styles from '../components/AboutUs.module.scss';
 const AboutUs = () => {
   return (
     <div className='background'>
-        <h1 className={`text ${styles.title}`}>🍽️ Welcome to Evelicious 🍽️</h1>
+        <h1 className={`text ${styles.title}`}>🍴 Welcome to Evelicious 🍴</h1>
         <p className={`text ${styles.description}`}>
           At Evelicious, we believe that food is more than just sustenance—it's an experience, a memory, and a journey through flavors. 
           Our collection of 100+ handpicked recipes is designed to bring joy to your kitchen and ignite your love for cooking. 🥘✨
@@ -26,6 +26,7 @@ const AboutUs = () => {
           Become part of our food-loving community. Share your creations, explore new flavors, and let’s make every meal an Evelicious experience. 
           Follow us on social media for daily inspiration! 📸✨
         </p>
+        <div style={{ height: '30px' }}></div>
       </div>
   );
 };
