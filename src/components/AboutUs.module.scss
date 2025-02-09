@@ -25,5 +25,39 @@
     margin-right: auto;
   }
   
+  @media (max-width: 660px) {
+    .title {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+    
+    .subtitle {
+      font-size: 1.5rem;
+      margin-top: 15px;
+    }
+    
+    .description {
+      font-size: 1rem;
+      line-height: 1.4;
+      max-width: 90%;
+    }
+  }
   
+  @media (max-width: 480px) {
+    .title {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+    
+    .subtitle {
+      font-size: 1.3rem;
+      margin-top: 12px;
+    }
+    
+    .description {
+      font-size: 0.9rem;
+      line-height: 1.3;
+      max-width: 95%;
+    }
+  }
   
