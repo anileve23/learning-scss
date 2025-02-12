@@ -1,11 +1,27 @@
 @use '../styles/abstracts/colors' as *;
 
+@mixin text-style($size, $weight: normal, $margin: 0, $align: center) {
+  font-size: $size;
+  font-weight: $weight;
+  margin-bottom: $margin;
+  text-align: $align;
+}
+
+@mixin box-style($bg: #fff, $radius: 8px, $shadow: 0 4px 8px $secondary, $padding: 15px) {
+  background-color: $bg;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  padding: $padding;
+}
+
+@mixin responsive($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
 .title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #e67e22;
-  margin-bottom: 20px;
-  text-align: center;
+  @include text-style(2.5rem, bold, 20px);
 }
 
 .recipeList {
@@ -15,10 +31,7 @@
 }
 
 .recipeCard {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px $secondary;
-  padding: 15px;
+  @include box-style;
 }
 
 .recipeImage {
@@ -31,14 +44,11 @@
 }
 
 .recipeTitle {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-top: 10px;
+  @include text-style(1.5rem, bold, 10px);
 }
 
 .sectionTitle {
-  font-size: 1.2rem;
-  margin-top: 10px;
+  @include text-style(1.2rem, normal, 10px);
 }
 
 .ingredients, .instructions {
@@ -54,11 +64,11 @@
   padding: 0 100px;
 }
 
-@media (max-width: 660px) {
+@include responsive(660px) {
   .contentWrapper {
     padding: 0 20px;
   }
-
+  
   .title {
     font-size: 2rem;
   }
@@ -88,7 +98,7 @@
   }
 }
 
-@media (max-width: 370px) {
+@include responsive(370px) {
   .contentWrapper {
     padding: 0 10px;
   }

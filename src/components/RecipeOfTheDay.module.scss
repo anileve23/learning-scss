@@ -1,12 +1,30 @@
+@mixin box-style($radius: 15px, $shadow: 0 4px 12px rgba(0, 0, 0, 0.1)) {
+  border-radius: $radius;
+  box-shadow: $shadow;
+}
+
+@mixin text-style($size, $weight, $color, $margin) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  margin-bottom: $margin;
+  text-align: center;
+}
+
+@mixin responsive($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
 .picture {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-top: 80px;
-  
+  @include box-style;
+
   &:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -14,20 +32,11 @@
 }
 
 .title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #e67e22;
-  margin-bottom: 30px;
-  text-align: center;
+  @include text-style(2.5rem, bold, #e67e22, 30px);
 }
 
-.subtitle {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #d35400;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  text-align: center;
+.subtitle, .subtitle1 {
+  @include text-style(1.8rem, 600, #d35400, 30px);
 }
 
 .ul, .ol {
@@ -58,84 +67,24 @@
   text-align: center;
 }
 
-@media (max-width: 660px) {
-  .title {
-    font-size: 2rem;
-    margin-bottom: 15px;
-  }
-  
-  .subtitle, .subtitle1 {
-    font-size: 1.5rem;
-    margin-top: 15px;
-  }
-  
-  .description, .ptext, .funFactsList {
-    font-size: 1rem;
-    line-height: 1.4;
-    max-width: 90%;
-  }
-  
-  .quizButton {
-    padding: 12px 20px;
-    font-size: 0.9rem;
-  }
-  
-  .quizResult {
-    font-size: 1rem;
-  }
-  
-  .picture {
-    width: 90%;
-    border-radius: 10px;
-  }
-  
-  .recipeContainer {
-    flex-direction: column;
-    margin: 0 5%;
-  }
-  
-  .leftColumn, .rightColumn, .centerColumn {
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  .ul li, .ol li {
-    margin-left: 20px;
-  }
+@include responsive(660px) {
+  .title { font-size: 2rem; margin-bottom: 15px; }
+  .subtitle, .subtitle1 { font-size: 1.5rem; margin-top: 15px; }
+  .description, .ptext, .funFactsList { font-size: 1rem; line-height: 1.4; max-width: 90%; }
+  .quizButton { padding: 12px 20px; font-size: 0.9rem; }
+  .quizResult { font-size: 1rem; }
+  .picture { width: 90%; border-radius: 10px; }
+  .recipeContainer { flex-direction: column; margin: 0 5%; }
+  .leftColumn, .rightColumn, .centerColumn { max-width: 100%; margin-bottom: 20px; }
+  .ul li, .ol li { margin-left: 20px; }
 }
 
-@media (max-width: 480px) {
-  .title {
-    font-size: 1.8rem;
-    margin-bottom: 12px;
-  }
-  
-  .subtitle, .subtitle1 {
-    font-size: 1.3rem;
-    margin-top: 12px;
-  }
-  
-  .description, .ptext, .funFactsList {
-    font-size: 0.9rem;
-    line-height: 1.3;
-    max-width: 95%;
-  }
-  
-  .quizButton {
-    padding: 10px 18px;
-    font-size: 0.85rem;
-  }
-  
-  .quizResult {
-    font-size: 0.9rem;
-  }
-  
-  .picture {
-    width: 100%;
-    border-radius: 8px;
-  }
-  
-  .recipeContainer {
-    margin: 0 3%;
-  }
+@include responsive(480px) {
+  .title { font-size: 1.8rem; margin-bottom: 12px; }
+  .subtitle, .subtitle1 { font-size: 1.3rem; margin-top: 12px; }
+  .description, .ptext, .funFactsList { font-size: 0.9rem; line-height: 1.3; max-width: 95%; }
+  .quizButton { padding: 10px 18px; font-size: 0.85rem; }
+  .quizResult { font-size: 0.9rem; }
+  .picture { width: 100%; border-radius: 8px; }
+  .recipeContainer { margin: 0 3%; }
 }

@@ -1,63 +1,82 @@
+@mixin font-size($size) {
+  font-size: $size;
+}
+
+@mixin font-weight($weight) {
+  font-weight: $weight;
+}
+
+@mixin text-align($align) {
+  text-align: $align;
+}
+
+@mixin margin($top, $right, $bottom, $left) {
+  margin: $top $right $bottom $left;
+}
+
+@mixin max-width($maxWidth) {
+  max-width: $maxWidth;
+}
+
 .title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #e67e22;
-    margin-bottom: 20px;
-    text-align: center;
-  }
+  @include font-size(2.5rem);
+  @include font-weight(700);
+  color: #e67e22;
+  @include margin(0, 0, 20px, 0);
+  @include text-align(center);
+}
 
 .subtitle {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: #d35400;
-    margin-top: 20px;
-    text-align: center;
+  @include font-size(1.8rem);
+  @include font-weight(600);
+  color: #d35400;
+  @include margin(20px, 0, 0, 0);
+  @include text-align(center);
+}
+
+.description {
+  @include font-size(1.2rem);
+  line-height: 1.6;
+  color: #555;
+  @include margin(0, 0, 15px, 0);
+  @include text-align(justify);
+  @include max-width(600px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 660px) {
+  .title {
+    @include font-size(2rem);
+    @include margin(0, 0, 15px, 0);
   }
-  
+
+  .subtitle {
+    @include font-size(1.5rem);
+    @include margin(15px, 0, 0, 0);
+  }
+
   .description {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #555;
-    margin-bottom: 15px;
-    text-align: justify;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    @include font-size(1rem);
+    line-height: 1.4;
+    @include max-width(90%);
   }
-  
-  @media (max-width: 660px) {
-    .title {
-      font-size: 2rem;
-      margin-bottom: 15px;
-    }
-    
-    .subtitle {
-      font-size: 1.5rem;
-      margin-top: 15px;
-    }
-    
-    .description {
-      font-size: 1rem;
-      line-height: 1.4;
-      max-width: 90%;
-    }
+}
+
+@media (max-width: 480px) {
+  .title {
+    @include font-size(1.8rem);
+    @include margin(0, 0, 12px, 0);
   }
-  
-  @media (max-width: 480px) {
-    .title {
-      font-size: 1.8rem;
-      margin-bottom: 12px;
-    }
-    
-    .subtitle {
-      font-size: 1.3rem;
-      margin-top: 12px;
-    }
-    
-    .description {
-      font-size: 0.9rem;
-      line-height: 1.3;
-      max-width: 95%;
-    }
+
+  .subtitle {
+    @include font-size(1.3rem);
+    @include margin(12px, 0, 0, 0);
   }
-  
+
+  .description {
+    @include font-size(0.9rem);
+    line-height: 1.3;
+    @include max-width(95%);
+  }
+}

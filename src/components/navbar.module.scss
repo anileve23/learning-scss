@@ -1,225 +1,242 @@
 @use '../styles/abstracts/colors' as *;
 
+@mixin text-style($size, $weight: normal, $margin: 0, $align: center) {
+  font-size: $size;
+  font-weight: $weight;
+  margin-bottom: $margin;
+  text-align: $align;
+}
+
+@mixin box-style($bg: #fff, $radius: 8px, $shadow: 0 4px 8px $secondary, $padding: 15px) {
+  background-color: $bg;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  padding: $padding;
+}
+
+@mixin flex-container($direction: row, $justify: flex-start, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin responsive($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
 .nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
+  @include flex-container(row, flex-end, center);
+  height: 100px;
+  padding: 0 20px;
+  position: relative;
+
+  .logoContainer {
+    @include flex-container(row, flex-start, center);
+    width: auto;
+  }
+
+  .logo {
     height: 100px;
-    padding: 0 20px;
-    position: relative;
+    width: auto;
+    object-fit: contain;
+    justify-content: flex-start;
+  }
 
-    .logoContainer {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        width: auto;
+  .largeLogo {
+    width: 380px;
+    max-width: 100%;
+    height: auto;
+    margin-top: -100px;
+    margin-right: 240px;
+  }
+
+  ul {
+    @include flex-container(row, space-between, center);
+    list-style-type: none;
+    font-weight: bold;
+    cursor: pointer;
+    color: #613033;
+    margin: 0;
+
+    li {
+      margin: 1em;
+      font-size: 18px;
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-weight: semi-bold;
+      text-transform: none;
+      line-height: 1.8;
+      letter-spacing: 1px;
+    }
+  }
+
+  .hideCheckbox {
+    display: none;
+  }
+
+  .emoji {
+    background-color: $dark-700;
+
+    &.dark {
+      background-color: $white;
+      color: $dark-900;
     }
 
-    .logo {
-        height: 100px;
-        width: auto;
-        object-fit: contain;
-        justify-content: flex-start;
-    }
+    border: none;
+  }
 
-    .largeLogo {
-        width: 380px;
-        max-width: 100%;
-        height: auto;
-        margin-top: -100px;
-        margin-right: 240px;
-    }
+  .hamburgerButton {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: #613033;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
 
-    ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        list-style-type: none;
-        font-weight: bold;
-        cursor: pointer;
-        color: #613033;
-        margin: 0;
+  .navLinks {
+    @include flex-container(row);
+  }
 
-        li {
-            margin: 1em;
-            font-size: 18px;
-            font-family: 'Montserrat Alternates', sans-serif;
-            font-weight: semi-bold;
-            text-transform: none;
-            line-height: 1.8;
-            letter-spacing: 1px;
-        }
-    }
+  .navLinks.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    background-color: $primary;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
 
-    .hideCheckbox {
-        display: none;
-    }
-    
-    .emoji {
-        background-color: $dark-700;
+  .link {
+    color: #613033;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 10px;
+  }
 
-        &.dark {
-            background-color: $white;
-            color: $dark-900;
-        }
-        
-        border: none;
+  .link:hover {
+    color: black;
+    transform: translateY(-3px);
+  }
+
+  .link:focus,
+  .link:active {
+    color: black;
+    transform: translateY(-3px);
+  }
+
+  @include responsive(768px) {
+    .navLinks {
+      display: none;
     }
 
     .hamburgerButton {
-        display: none;
-        font-size: 30px;
-        background: none;
-        border: none;
-        color: #613033;
-        cursor: pointer;
-        position: absolute;
-        top: 20px;
-        right: 20px;
+      display: block;
     }
 
-    .navLinks {
-        display: flex;
-        flex-direction: row;
+    ul {
+      display: none;
+      flex-direction: column;
     }
 
     .navLinks.show {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100px;
-        right: 0;
-        background-color: $primary;
-        width: 100%;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100px;
+      right: 0;
+      width: 100%;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: $primary;
+
+      &.dark {
+        background-color: $secondary;
+      }
     }
 
-    .link {
-        color: #613033;
-        text-decoration: none;
-        transition: color 0.3s ease, transform 0.3s ease;
-        margin-bottom: 10px;
+    .mobileSwitchContainer {
+      @include flex-container(row, flex-start, center);
+      margin-top: 10px;
     }
 
-    .link:hover {
-        color: black;
-        transform: translateY(-3px);
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+      margin-left: 10px;
     }
 
-    .link:focus,
-    .link:active {
-        color: black;
-        transform: translateY(-3px);
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
     }
 
-    @media (max-width: 768px) {
-        .navLinks {
-            display: none;
-        }
-
-        .hamburgerButton {
-            display: block;
-        }
-
-        ul {
-            display: none;
-            flex-direction: column;
-        }
-
-        .navLinks.show {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            top: 100px;
-            right: 0;
-            width: 100%;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: $primary;
-            
-            &.dark {
-                background-color: $secondary;
-            }
-        }        
-
-        .mobileSwitchContainer {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            margin-top: 10px;
-        }
-
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 50px;
-            height: 24px;
-            margin-left: 10px;
-        }
-
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: 0.4s;
-            border-radius: 34px;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 16px;
-            width: 16px;
-            border-radius: 50%;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: 0.4s;
-        }
-
-        input:checked + .slider {
-            background-color: black;
-        }
-
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
-
-        .mobileSwitchButton {
-            background-color: transparent;
-            border: none;
-            color: #613033;
-            margin: 1em;
-            font-size: 18px;
-            font-family: 'Montserrat Alternates', sans-serif;
-            font-weight: 600;
-            text-transform: none;
-            line-height: 1.8;
-            letter-spacing: 1px;
-            cursor: pointer;
-            text-align: left;
-            display: block;
-            padding: 0;
-        }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
     }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: 0.4s;
+    }
+
+    input:checked + .slider {
+      background-color: black;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    .mobileSwitchButton {
+      background-color: transparent;
+      border: none;
+      color: #613033;
+      margin: 1em;
+      font-size: 18px;
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-weight: 600;
+      text-transform: none;
+      line-height: 1.8;
+      letter-spacing: 1px;
+      cursor: pointer;
+      text-align: left;
+      display: block;
+      padding: 0;
+    }
+  }
 }
 
 .light {
-    background-color: $primary;
+  background-color: $primary;
 }
 
 .dark {
-    background-color: $secondary;
+  background-color: $secondary;
 }

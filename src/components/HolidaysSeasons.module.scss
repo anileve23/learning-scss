@@ -1,134 +1,144 @@
+@mixin font-size($size) {
+  font-size: $size;
+}
+
+@mixin font-weight($weight) {
+  font-weight: $weight;
+}
+
+@mixin text-align($align) {
+  text-align: $align;
+}
+
 .title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #e67e22;
-    margin-bottom: 20px;
-    text-align: center;
+  @include font-size(2.5rem);
+  @include font-weight(700);
+  color: #e67e22;
+  margin-bottom: 20px;
+  @include text-align(center);
+}
+
+.subtitle {
+  @include font-size(1.8rem);
+  @include font-weight(600);
+  color: #d35400;
+  @include text-align(center);
+}
+
+.subtitle1 {
+  @include font-size(1.4rem);
+  @include font-weight(600);
+  max-width: 800px;
+  @include text-align(center);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.funFacts {
+  margin-top: 40px;
+  @include text-align(center);
+  padding: 0 20px;
+}
+
+.funFactsList {
+  list-style-type: disc;
+  margin-left: 40px;
+  padding-left: 20px;
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.8;
+  display: inline-block;
+  @include text-align(left);
+}
+
+.holidayQuiz {
+  margin-top: 50px;
+  @include text-align(center);
+  padding: 0 20px;
+}
+
+.quizButton {
+  background-color: #ff6347;
+  color: white;
+  padding: 15px 25px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.quizButton:hover {
+  background-color: #e53e2f;
+}
+
+.quizResult {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2ecc71;
+  display: inline-block;
+  @include text-align(center);
+}
+
+.ptext {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: 800;
+  font-size: larger;
+}
+
+@media (max-width: 660px) {
+  .title {
+    @include font-size(2rem);
+    margin-bottom: 15px;
   }
 
-  .subtitle {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: #d35400;
-    text-align: center;
+  .subtitle, .subtitle1 {
+    @include font-size(1.5rem);
+    margin-top: 15px;
   }
 
-  .subtitle1 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    max-width: 800px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-
-  .funFacts {
-    margin-top: 40px;
-    text-align: center;
-    padding: 0 20px;
-  }
-  
-  .funFactsList {
-    list-style-type: disc;
-    margin-left: 40px;
-    padding-left: 20px;
-    font-size: 1.2rem;
-    color: #555;
-    line-height: 1.8;
-    display: inline-block;
-    text-align: left;
-  }
-  
-  .holidayQuiz {
-    margin-top: 50px;
-    text-align: center;
-    padding: 0 20px;
-  }
-  
-  .quizButton {
-    background-color: #ff6347;
-    color: white;
-    padding: 15px 25px;
-    margin: 10px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+  .description, .ptext, .funFactsList {
     font-size: 1rem;
-    transition: background-color 0.3s ease;
+    line-height: 1.4;
+    max-width: 90%;
   }
-  
-  .quizButton:hover {
-    background-color: #e53e2f;
+
+  .quizButton {
+    padding: 12px 20px;
+    font-size: 0.9rem;
   }
-  
+
   .quizResult {
-    margin-top: 20px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #2ecc71;
-    display: inline-block;
-    text-align: center;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    @include font-size(1.8rem);
+    margin-bottom: 12px;
   }
 
-  .ptext {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-weight: 800;
-    font-size: larger;
+  .subtitle, .subtitle1 {
+    @include font-size(1.3rem);
+    margin-top: 12px;
   }
 
-  @media (max-width: 660px) {
-    .title {
-      font-size: 2rem;
-      margin-bottom: 15px;
-    }
-    
-    .subtitle, .subtitle1 {
-      font-size: 1.5rem;
-      margin-top: 15px;
-    }
-    
-    .description, .ptext, .funFactsList {
-      font-size: 1rem;
-      line-height: 1.4;
-      max-width: 90%;
-    }
-    
-    .quizButton {
-      padding: 12px 20px;
-      font-size: 0.9rem;
-    }
-    
-    .quizResult {
-      font-size: 1rem;
-    }
+  .description, .ptext, .funFactsList {
+    font-size: 0.9rem;
+    line-height: 1.3;
+    max-width: 95%;
   }
-  
-  @media (max-width: 480px) {
-    .title {
-      font-size: 1.8rem;
-      margin-bottom: 12px;
-    }
-    
-    .subtitle, .subtitle1 {
-      font-size: 1.3rem;
-      margin-top: 12px;
-    }
-    
-    .description, .ptext, .funFactsList {
-      font-size: 0.9rem;
-      line-height: 1.3;
-      max-width: 95%;
-    }
-    
-    .quizButton {
-      padding: 10px 18px;
-      font-size: 0.85rem;
-    }
-    
-    .quizResult {
-      font-size: 0.9rem;
-    }
+
+  .quizButton {
+    padding: 10px 18px;
+    font-size: 0.85rem;
   }
-  
+
+  .quizResult {
+    font-size: 0.9rem;
+  }
+}
