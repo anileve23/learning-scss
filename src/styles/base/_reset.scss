@@ -21,6 +21,13 @@ html, body {
     .background {
         background-color: $dark-000;
     }
+
+    main.content {
+        background-color: $dark-000; // Ensure background color is set
+        padding-top: 80px;
+        padding-bottom: 40px;
+        min-height: calc(100vh - 160px);
+    }
 }
 
 .dark {
@@ -31,7 +38,15 @@ html, body {
     .background {
         background-color: $dark-700;
     }
+
+    main.content {
+        background-color: $dark-700; // Set dark mode background
+        padding-top: 80px;
+        padding-bottom: 40px;
+        min-height: calc(100vh - 160px);
+    }
 }
+
 
 .flex {
     display: flex;

@@ -16,15 +16,16 @@ function App() {
     <Router>
       <div className={currentTheme}>
         <Navbar />
-        <Routes>
-          <Route path="/learning-scss" element={<Navigate to="/about-us" />} />
-          
-          <Route path="/recipe-of-the-day" element={<RecipeOfTheDay />} />
-          <Route path="/recipies" element={<Recipies />} />
-          <Route path="/holidays-seasons" element={<HolidaysSeasons />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="*" element={<Navigate to="/about-us" />} />
-        </Routes>
+        <main className="content">
+          <Routes>
+            <Route path="/learning-scss" element={<Navigate to="/about-us" />} />
+            <Route path="/recipe-of-the-day" element={<RecipeOfTheDay />} />
+            <Route path="/recipies" element={<Recipies />} />
+            <Route path="/holidays-seasons" element={<HolidaysSeasons />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="*" element={<Navigate to="/about-us" />} />
+          </Routes>
+        </main>
       </div>
     </Router>
   );

@@ -100,7 +100,6 @@ const HolidaysSeasons = () => {
     </p>
   )}
 </section>
-<div style={{ height: '100px' }}></div>
       </div>
   )
 }

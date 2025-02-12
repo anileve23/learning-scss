@@ -42,7 +42,7 @@ const RecipeOfTheDay = () => {
   if (!randomRecipe || !image) return <div>Loading...</div>;
 
   return (
-<div className="background" style={{ paddingTop: '50px', paddingBottom: '44px' }}>
+<div className="background">
       <h1 className={`text ${styles.title}`}>🍴 {randomRecipe.name} 🍴</h1>
       <div className={styles.recipeContainer}>
         <div className={styles.centerColumn}>
@@ -71,7 +71,6 @@ const RecipeOfTheDay = () => {
           </ol>
         </div>
       </div>
-      <div style={{ height: '30px' }}></div>
     </div>
   );
 };

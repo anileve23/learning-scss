@@ -26,7 +26,6 @@ const AboutUs = () => {
           Become part of our food-loving community. Share your creations, explore new flavors, and let’s make every meal an Evelicious experience. 
           Follow us on social media for daily inspiration! 📸✨
         </p>
-        <div style={{ height: '30px' }}></div>
       </div>
   );
 };
