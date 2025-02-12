@@ -329,7 +329,7 @@ const Recipies = () => {
                 className={styles.recipeImage}
               />
             ) : (
-              <p>Image not available</p> 
+              <p>Image not available</p>
             )}
             <h2 className={`text ${styles.recipeTitle}`}>{recipe.name}</h2>
             <h3 className={`text ${styles.sectionTitle}`}>Ingredients:</h3>
