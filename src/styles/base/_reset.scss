@@ -23,7 +23,7 @@ html, body {
     }
 
     main.content {
-        background-color: $dark-000; // Ensure background color is set
+        background-color: $dark-000;
         padding-top: 80px;
         padding-bottom: 40px;
         min-height: calc(100vh - 160px);
@@ -40,7 +40,7 @@ html, body {
     }
 
     main.content {
-        background-color: $dark-700; // Set dark mode background
+        background-color: $dark-700;
         padding-top: 80px;
         padding-bottom: 40px;
         min-height: calc(100vh - 160px);
