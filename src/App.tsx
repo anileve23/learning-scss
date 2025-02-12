@@ -13,7 +13,7 @@ function App() {
   const currentTheme = themeContext?.theme || 'light';
 
   return (
-    <Router>
+    <Router basename="/learning-scss">
       <div className={currentTheme}>
         <Navbar />
         <main className="content">
