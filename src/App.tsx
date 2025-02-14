@@ -7,6 +7,7 @@ import RecipeOfTheDay from './components/RecipeOfTheDay';
 import Recipies from './components/Recipies';
 import AboutUs from './components/AboutUs';
 import HolidaysSeasons from './components/HolidaysSeasons';
+import HomePage from './components/HomePage';
 
 function App() {
   const themeContext = useContext(ThemeContext);
@@ -18,12 +19,12 @@ function App() {
         <Navbar />
         <main className="content">
           <Routes>
-            <Route path="/learning-scss" element={<Navigate to="/about-us" />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/recipe-of-the-day" element={<RecipeOfTheDay />} />
             <Route path="/recipies" element={<Recipies />} />
             <Route path="/holidays-seasons" element={<HolidaysSeasons />} />
             <Route path="/about-us" element={<AboutUs />} />
-            <Route path="*" element={<Navigate to="/about-us" />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </main>
       </div>

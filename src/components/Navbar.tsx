@@ -39,8 +39,10 @@ const Navbar = () => {
 
     return (
         <nav className={`${styles.nav} ${styles[theme]}`}>
-            <div className={styles.logoContainer}>
-                <img src={logo} alt="Evelicious Logo" className={`${styles.logo} ${styles.largeLogo}`} />
+            <div>
+                <a href="/"> 
+                    <img src={logo} alt="Evelicious Logo" className={`${styles.logo} ${styles.largeLogo}`} />
+                </a>
             </div>
 
             <ul className={`${styles.navLinks} ${isMobileMenuOpen ? styles.show : ''} ${styles[theme]}`}>

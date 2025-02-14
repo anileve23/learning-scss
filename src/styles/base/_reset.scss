@@ -13,6 +13,12 @@ html, body {
   width: 100%;
 }
 
+main.content {
+  min-height: calc(100vh - 100px);
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
 .light {
     .text {
         color: $dark-900;
@@ -24,9 +30,6 @@ html, body {
 
     main.content {
         background-color: $dark-000;
-        padding-top: 80px;
-        padding-bottom: 40px;
-        min-height: calc(100vh - 160px);
     }
 }
 
@@ -41,12 +44,8 @@ html, body {
 
     main.content {
         background-color: $dark-700;
-        padding-top: 80px;
-        padding-bottom: 40px;
-        min-height: calc(100vh - 160px);
     }
 }
-
 
 .flex {
     display: flex;
@@ -57,7 +56,6 @@ html, body {
 }
 
 .switch-button {
-    margin-top: 10px;
     margin-left: 20px;
     margin-right: 20px;
     padding: 6px;
