@@ -40,7 +40,7 @@ const Navbar = () => {
     return (
         <nav className={`${styles.nav} ${styles[theme]}`}>
             <div>
-                <a href="/"> 
+                <a href="/learning-scss/"> 
                     <img src={logo} alt="Evelicious Logo" className={`${styles.logo} ${styles.largeLogo}`} />
                 </a>
             </div>
